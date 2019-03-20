@@ -41,6 +41,11 @@ class TWDriver(webdriver.Chrome):
         else:
             return True
 
+    def send_units(self, row, pattern):
+        self.execute_script('document.querySelectorAll("#plunder_list tbody tr")[' + str(row + 2) +
+                            '].getElementsByTagName("td")[' + str(["A", "B"].index(pattern) + 8) +
+                            '].getElementsByTagName("a")[0].click()')
+
     def close(self):
         with open("cookies.pkl", "wb") as file:
             cookies = self.get_cookies()
