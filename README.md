@@ -8,3 +8,9 @@ Farming bot for Tribal Wars. Libraries used:
 This software is intended for entertainment purposes only.
 Using it may violate rules of the game.
 Use at your own risk.
+
+### Setup
+
+```
+python3 main.py pl128
+```
