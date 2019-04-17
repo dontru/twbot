@@ -1,3 +1,4 @@
+import os
 import pickle
 
 from selenium import webdriver
@@ -25,6 +26,8 @@ class TWDriver(webdriver.Chrome):
             self.get(MAIN_URL + "page/play/" + self.world)
         except FileNotFoundError:
             pass
+        except EOFError:
+            os.remove("cookies.pkl")
 
     def goto(self, query):
         self.get("https://" + self.world + DOMAIN + "/game.php?" + query)
